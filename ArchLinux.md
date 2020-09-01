@@ -112,6 +112,8 @@
       * `pacman -S dosfstools grub efibootmgr` **GRUB 进行 UEFI 引导**
       * `grub-install --target=x86_64-efi --efi-directory=/boot/EFI --recheck` **安装引导工具**
       * `grub-mkconfig -o /boot/grub/grub.cfg` **创建配置文件**
+      * `sudo pacman -S os-prober` **安装os-prober探测windows分区，安装后执行上一条命令** 
+      * `sudo pacman -S ntfs-3g`   **如果还没有探测到，安装ntfs-3g后再创建配置文件**
 
    10. 用户管理
 
@@ -175,6 +177,31 @@
 
          `pacman -S xf86-input-synaptics` **触控板驱动**
 
-         `pacman -S fprintd libfprint` **指纹识别驱动**
+         `sudo cp /usr/share/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d/&& vim /etc/X11/xorg.conf.d/70-synaptics.conf`  并且修改为下面内容
 
+         ```rust
+         Section "InputClass"
+                 Identifier "touchpad"
+                 Driver "synaptics"
+                 MatchIsTouchpad "on"
+                         Option "TapButton1" "1"
+                         Option "TapButton2" "3"
+                         Option "TapButton3" "0"
+                         Option "VertEdgeScroll" "on"
+                         Option "VertTwoFingerScroll" "on"
+                         Option "HorizEdgeScroll" "on"
+                         Option "HorizTwoFingerScroll" "on"
+                         Option "VertScrollDelta" "-112"
+                         Option "HorizScrollDelta" "-114"
+                         Option "MaxTapTime" "125"
+         EndSection
+         ```
          
+         `pacman -S fprintd libfprint` **指纹识别驱动**
+         
+       
+   15. 安装按键控制音量
+
+       * ` sudo pacman -S alsa-utils`  **安装alsa工具包**
+       * `alsamixer` **解除静音**
+       * `xfce4-pulseaudio-plugin` **按键音量**
