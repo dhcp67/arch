@@ -205,3 +205,14 @@
        * ` sudo pacman -S alsa-utils`  **安装alsa工具包**
        * `alsamixer` **解除静音**
        * `xfce4-pulseaudio-plugin` **按键音量**
+       
+   16. 命令补全
+
+       * `pacman -S bash-completion` **安装bash-completion**
+       * ```bash
+         if [ -f /etc/bash_completion ]; then
+         . /etc/bash_completion
+         fi
+         ```
+
+       * 在.bashrc加入以上内容
