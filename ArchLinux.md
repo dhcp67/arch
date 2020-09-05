@@ -26,6 +26,11 @@
       * `timedatectl set-ntp true`  **时间同步**
       * `timedatectl list-timezones`  **列出所有时区**
       * `timedatectl set-timezone time-zone( Asia/Shanghai)`  **设置时区**
+      * 若时间快8小时
+      * `sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai/etc/localtime` 设置时区
+      * `sudo pacman -S openntpd` 安装openNTPD
+      * `systemctl restart openntpd` 重启openNTPD
+      * `systemctl enable openntpd` 设置开机启动
 
    5. 配置磁盘分区
 
@@ -154,11 +159,11 @@
          **Nvidia 显卡驱动： GeForce 400 及以上版本安装 nvidia 或者 nvidia-lts GeForce 8000/9000、ION 以及 100-300（NV5x, NV8x, NV9x and NVAx）等 2006-2010 的显卡型号，安装 nvidia-340xx (AUR) 或者 nvidia-340xx-lts (AUR) 。 --> pacman -S cude 、pacman -S nvidia-settings**
 
        * 内核驱动
-       
+
          ucode 微码固件：intel CPU 微码固件：`pacman -S intel-ucode` 
-       
+
          amd CPU 微码固件：`pacman -S amd-ucode`
-       
+
    14. 安装 KDE 桌面环境
 
        * 安装KDE和xorg
@@ -199,13 +204,13 @@
          
          `pacman -S fprintd libfprint` **指纹识别驱动**
          
-       
+
    15. 安装按键控制音量
 
        * ` sudo pacman -S alsa-utils`  **安装alsa工具包**
        * `alsamixer` **解除静音**
        * `xfce4-pulseaudio-plugin` **按键音量**
-       
+
    16. 命令补全
 
        * `pacman -S bash-completion` **安装bash-completion**
