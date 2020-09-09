@@ -214,10 +214,13 @@
    16. 命令补全
 
        * `pacman -S bash-completion` **安装bash-completion**
+       
        * ```bash
          if [ -f /etc/bash_completion ]; then
          . /etc/bash_completion
          fi
-         ```
-
+  ```
+       
        * 在.bashrc加入以上内容
+       
+       * `sudo pacman -S vim-youcompleteme-git` **安装youcompleteme,vim补全插件**
