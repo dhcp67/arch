@@ -219,8 +219,15 @@
          if [ -f /etc/bash_completion ]; then
          . /etc/bash_completion
          fi
-  ```
+         ```
+         
+         * 在.bashrc加入下上内容
+           
+            `sudo pacman -S vim-youcompleteme-git`  **安装youcompleteme,vim补全插件**
        
-       * 在.bashrc加入以上内容
+   17. `WINEPREFIX=~/.deepinwine/Deepin-QQ deepin-wine winecfg` 设置deepin-wine软件字体
+   
        
-       * `sudo pacman -S vim-youcompleteme-git` **安装youcompleteme,vim补全插件**
+
+
+
