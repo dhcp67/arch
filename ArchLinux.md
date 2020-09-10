@@ -227,7 +227,6 @@
        
    17. `WINEPREFIX=~/.deepinwine/Deepin-QQ deepin-wine winecfg` 设置deepin-wine软件字体
    
+       `WINEPREFIX=~/.deepinwine/Deepin- deepin-wine regedit` 设置字体位于**HKEY_CURRENT_USER/Software/Wine/Fonts/Replacement**  默认值设为字体名字
        
-
-
-
+       
