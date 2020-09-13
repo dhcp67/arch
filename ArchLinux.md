@@ -229,4 +229,31 @@
    
        `WINEPREFIX=~/.deepinwine/Deepin- deepin-wine regedit` 设置字体位于**HKEY_CURRENT_USER/Software/Wine/Fonts/Replacement**  默认值设为字体名字
        
+       `~/.wine/drive_c/windows/Fonts` 字体目录
        
+   18. `xinput` **输入设备管理，（禁用、启动键盘鼠标等）**
+       `xinput list `
+       
+   19. vim配置
+   
+       `https://github.com/junegunn/vim-plug`  vim-plug的github
+   
+       `mkdir -p  ~/.vim/autoload/ 创建文件夹`
+   
+       `p plug.vim  ~/.vim/autoload/plug.vim`安装 vim-plug
+   
+       安装或删除插件
+   
+       ```shell
+       call plug#begin('~/.vim/plugged')
+       Plug 'neoclide/coc.nvim', {'branch': 'release'}
+       call plug#end()
+       ```
+   
+       `:PlugInstall`安装
+   
+       `PlugClean` 卸载
+   
+       `pacman -S nodejs yarn` 安装（依赖） nodejs， yarn
+       
+       `:CocConfig` 进入配置文件配置 
