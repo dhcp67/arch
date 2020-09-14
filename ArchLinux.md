@@ -236,24 +236,48 @@
        
    19. vim配置
    
+       ```shell
+   
+       "设置后才能复制到系统剪切板
+   set clipboard=unnamed
+       set clipboard+=unnamedplus
+   "启用鼠标右键"
+       set mouse=v 
+   "y复制到系统剪切板
+       vnoremap <Leader>y "+y
+       ```
+       
        `https://github.com/junegunn/vim-plug`  vim-plug的github
-   
-       `mkdir -p  ~/.vim/autoload/ 创建文件夹`
-   
-       `p plug.vim  ~/.vim/autoload/plug.vim`安装 vim-plug
-   
-       安装或删除插件
-   
+       
+   `mkdir -p  ~/.vim/autoload/ 创建文件夹`
+       
+   `p plug.vim  ~/.vim/autoload/plug.vim`安装 vim-plug
+       
+   安装或删除插件
+       
        ```shell
        call plug#begin('~/.vim/plugged')
        Plug 'neoclide/coc.nvim', {'branch': 'release'}
        call plug#end()
        ```
-   
+       
        `:PlugInstall`安装
-   
+       
        `PlugClean` 卸载
-   
+       
        `pacman -S nodejs yarn` 安装（依赖） nodejs， yarn
        
-       `:CocConfig` 进入配置文件配置 
+       `:CocConfig` 进入配置文件配置 ，如：
+       
+       ```
+       {
+         "languageserver": {
+           "clangd": {
+             "command": "clangd",
+             "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+             "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+           }
+         }
+       }
+       ```
+   
