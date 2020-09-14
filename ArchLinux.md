@@ -249,17 +249,18 @@
        
        `https://github.com/junegunn/vim-plug`  vim-plug的github
        
-   `mkdir -p  ~/.vim/autoload/ 创建文件夹`
-       
-   `p plug.vim  ~/.vim/autoload/plug.vim`安装 vim-plug
-       
-   安装或删除插件
+       `mkdir -p  ~/.vim/autoload/ 创建文件夹`
+           
+       `p plug.vim  ~/.vim/autoload/plug.vim`安装 vim-plug
+           
+       安装或删除插件
        
        ```shell
+       shell
        call plug#begin('~/.vim/plugged')
        Plug 'neoclide/coc.nvim', {'branch': 'release'}
        call plug#end()
-       ```
+       ​```
        
        `:PlugInstall`安装
        
@@ -269,7 +270,7 @@
        
        `:CocConfig` 进入配置文件配置 ，如：
        
-       ```
+       ​```
        {
          "languageserver": {
            "clangd": {
@@ -280,4 +281,9 @@
          }
        }
        ```
+       
+   20.  `modprobe acpi-cpufreq` 加载cpu频率调节驱动程序模块
    
+       * `sudo pacman -S cpupower` 安装cpupower 
+       * `cpupower frequency-info` 查看cpu详细情况
+       * `sudo systemctl enable cpupower.service`=
